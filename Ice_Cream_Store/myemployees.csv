@@ -1,0 +1,6 @@
+employee_id,employee_name,position,hours_worked,sales_made
+101,Alice Johnson,Cashier,40.0,120
+102,Bob Smith,Server,35.0,100
+103,Charlie Davis,Server,38.5,85
+104,Diana Prince,Manager,45.0,150
+105,Evan Williams,Cashier,20.0,50

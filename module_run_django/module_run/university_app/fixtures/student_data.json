@@ -1,0 +1,12 @@
+[
+{
+  "model": "university_app.student",
+  "pk": 1,
+  "fields": {
+    "name": "Miya",
+    "student_email": "miya@school.com",
+    "personal_email": "miya@gmail.com",
+    "dorm_number": 1
+  }
+}
+]

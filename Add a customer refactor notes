@@ -1,0 +1,157 @@
+        def capture_account_type():
+            account_type = input("Please enter customer account type: ")
+            if account_type in ['sx', 'px', 'sf', 'pf']:
+                return account_type
+            else:
+                print("Improper input. Please choose valid account_type")
+                return capture_account_type()
+
+        def capture_first_name():
+            first_name = input("Please enter customer first name: ")
+            if isinstance(first_name, str) and first_name.istitle():
+                return first_name
+            else:
+                print("Improper input. PLease ener valid first_name")
+                return capture_first_name()
+
+        def capture_last_name():
+            last_name = input("Please enter customer last name: ")
+            if isinstance(last_name, str) and last_name.istitle():
+                return last_name
+            else:
+                print("Improper input. PLease ener valid last_name")
+                return capture_last_name()
+
+        def capture_current_video_rentals():
+            list_movies = []
+            get_list_movies = input("Please provide movies currently checked out by customer: ")
+            return list_movies.append(get_list_movies)
+
+        customer = {
+            "id": Customer.customer_count,
+            "account_type": capture_account_type(),
+            "first_name": capture_first_name(),
+            "last_name": capture_last_name(),
+            "current_video_rentals": capture_current_video_rentals(),
+        }
+
+
+
+    @classmethod
+    def get_customer_by_id(cls, id_input=None):
+        if id_input is None:
+            id_input = []
+            for _ in range(2):
+                id_option = input("Please enter ID: ")
+                id_input.append(id_option)
+            for customer in Customer.customers:
+                if id_option == str(customer.id):
+                    return customer
+            print("Not a valid ID")
+            return None
+        else:
+            for customer in Customer.customers:
+                if id_input == customer.id: 
+                    return customer
+        print("Not a valid ID")
+        return None
+            
+
+        def capture_account_type():
+            account_type = input("Please enter customer account type: ")
+            if account_type in ['sx', 'px', 'sf', 'pf']:
+                return account_type
+            else:
+                print("Improper input. Please choose valid account_type")
+                return capture_account_type()
+
+        def capture_first_name():
+            first_name = input("Please enter customer first name: ")
+            if isinstance(first_name, str) and first_name.istitle():
+                return first_name
+            else:
+                print("Improper input. PLease ener valid first_name")
+                return capture_first_name()
+
+        def capture_last_name():
+            last_name = input("Please enter customer last name: ")
+            if isinstance(last_name, str) and last_name.istitle():
+                return last_name
+            else:
+                print("Improper input. PLease ener valid last_name")
+                return capture_last_name()
+
+        def capture_current_video_rentals():
+            list_movies = []
+            while True:
+                get_list_movies = input("Please provide a movie currently checked out by the customer (or type 'done' to finish): ")
+                if get_list_movies.lower() == 'done':
+                    break
+                list_movies.append(get_list_movies)
+            return list_movies
+
+        if customer_dict == None:
+            customer_dict = {
+                "id": Customer.customer_count,
+                "account_type": capture_account_type(),
+                "first_name": capture_first_name(),
+                "last_name": capture_last_name(),
+                "current_video_rentals": capture_current_video_rentals(),
+            }
+
+
+
+    @staticmethod
+    def create_a_customer_dict(choices=None):
+        if choices is None:
+            choices = []
+
+            for _ in range(6): 
+                choices.append(input("Enter customer attributes in order: "))
+
+        customer_dict = {}
+        customer_dict['id'] = 1
+
+        first_name_set = False
+        last_name_set = False
+
+        for attribute in choices:
+            if isinstance(attribute, str) and attribute.istitle() and not first_name_set:
+                customer_dict['first_name'] = attribute
+                first_name_set = True
+            elif isinstance(attribute, str) and attribute.istitle() and not last_name_set:
+                customer_dict['last_name'] = attribute
+                last_name_set =True
+            elif isinstance(attribute, str) and attribute in ['sx', 'px', 'sf', 'pf'] and attribute not in customer_dict:
+                customer_dict['account_type'] = attribute
+            elif isinstance(attribute, list):
+                customer_dict['current_video_rentals'] = attribute
+
+        return customer_dict
+
+
+
+    #def __eq__(self, other):
+        #if not isinstance(other, Customer):
+            #return NotImplemented
+        #return (self.id == other.id and
+            #self.account_type == other.account_type and
+            #self.first_name == other.first_name and
+            #self.last_name == other.last_name and
+            #self.current_video_rentals == other.current_video_rentals)
+
+
+
+
+    def get_customer_by_id(cls, ids=None):
+        if ids is None:
+            ids = input("Please enter ID: ")
+            if ids == None:
+                return None
+            elif ids != None:
+                for customer in Customer.customers:
+                    if str(ids) == str(customer.id):
+                        return customer
+                    else:
+                        print("Invalid ID")
+                        Customer.get_customer_by_id()

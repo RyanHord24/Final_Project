@@ -1,0 +1,6 @@
+id,menu_option,ice_cream_flavor,cone_flavor,sale_cost,amount_of_sales
+1,Vanilla Cone,Vanilla,Waffle,3.0,150
+2,Chocolate Cone,Chocolate,Sugar,3.2,120
+3,Sprinkle Sundae,Vanilla,Waffle,3.5,80
+4,Double Scoop,Vanilla and Chocolate,Sugar,4.0,60
+5,Triple Scoop,"Vanilla, Chocolate, Strawberry",Waffle,4.5,30
